@@ -18,9 +18,20 @@ export const TaskList = () => {
 
   function RenderTask() {
     if (loading) {
-      return <h1>....Cargando</h1>;
+      return (
+        <div className={`flex justify-center items-center`}>
+          <h1 className={`font-medium`}>....Cargando</h1>
+        </div>
+      
+    );
+
     } else if (tasks.length === 0) {
-      return <h1>No hay tareas</h1>;
+      return (
+        <div className={`flex justify-center items-center`}>
+          <h1 className={`font-medium`}>No hay tareas</h1>
+        </div>
+      
+    );
     } else {
       return (
         <div className={`h-full w-full px-3 grid grid-cols-4 gap-3`}>

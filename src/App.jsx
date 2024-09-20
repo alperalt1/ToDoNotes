@@ -17,7 +17,7 @@ import { TaskContextProvider } from "./context/TaskContext";
 function App() {
   return (
     <TaskContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/ToDoNotes">
         <AuthListener />
         <Routes>
           <Route path="/" element={<Loginpage />} />
