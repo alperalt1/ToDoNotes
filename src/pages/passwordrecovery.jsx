@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/helper/supabaseclient";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Passwordrecovery = () => {
   const navigate = useNavigate();
@@ -59,9 +60,9 @@ const Passwordrecovery = () => {
           </form>
           <hr className={`mx-8`}></hr>
           <div className={`my-4 flex justify-center items-center`}>
-            <a href="7#/" className={`text-sm mt-1 font-medium`}>
+            <Link to="/" className={`text-sm mt-1 font-medium`}>
               ¿Tienes una cuenta? Iniciar Sesión
-            </a>
+            </Link>
           </div>
         </div>
       </div>

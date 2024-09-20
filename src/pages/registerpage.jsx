@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { supabase } from "../lib/helper/supabaseclient";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Registerpage = () => {
   let navigate = useNavigate()
@@ -120,9 +121,9 @@ const Registerpage = () => {
           </form>
           <hr className={`mx-8`}></hr>
           <div className={`my-4 flex justify-center items-center`}>
-            <a href="/#/" className={`text-sm mt-1 font-semibold`}>
+            <Link to="/" className={`text-sm mt-1 font-semibold`}>
               ¿Tienes una cuenta? Iniciar Sesión
-            </a>
+            </Link>
           </div>
         </div>
       </div>

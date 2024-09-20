@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { supabase } from "../lib/helper/supabaseclient";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Loginpage = () => {
   let navigate = useNavigate();
@@ -122,17 +123,17 @@ const Loginpage = () => {
           </form>
           <hr className={`mx-8`}></hr>
           <div className={`my-4 flex justify-center items-center`}>
-            <a href="/#/register" className={`text-sm mt-1 font-semibold`}>
+            <Link to="/register" className={`text-sm mt-1 font-semibold`}>
               Registrarse
-            </a>
+            </Link>
           </div>
           <div className={`my-6 flex justify-center items-center`}>
-            <a
-              href="/#/passwordrecovery"
+            <Link
+              to="/passwordrecovery"
               className={`text-sm mt-1 font-semibold`}
             >
               ¿Olvidaste tu Contraseña?
-            </a>
+            </Link>
           </div>
         </div>
       </div>
