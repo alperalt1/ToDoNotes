@@ -3,7 +3,7 @@ import { supabase } from "./lib/helper/supabaseclient";
 import Loginpage from "./pages/loginpage";
 import Registerpage from "./pages/registerpage";
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
   Routes,
   useNavigate,
@@ -17,16 +17,19 @@ import { TaskContextProvider } from "./context/TaskContext";
 function App() {
   return (
     <TaskContextProvider>
-      <HashRouter basename="/ToDoNotes">
+      <BrowserRouter basename="/ToDoNotes">
         <AuthListener />
         <Routes>
           <Route path="/" element={<Loginpage />} />
           <Route path="/register" element={<Registerpage />} />
           <Route path="/passwordrecovery" element={<Passwordrecovery />} />
           <Route path="/init" element={<InitPage />} />
-          <Route path="/passwordupdate" element={<Passwordupdate />} />
+          <Route
+            path="/passwordupdate"
+            element={<Passwordupdate></Passwordupdate>}
+          />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </TaskContextProvider>
   );
 }
@@ -34,34 +37,26 @@ function App() {
 function AuthListener() {
   const navigate = useNavigate();
   const location = useLocation();
-
   useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (
-          !session &&
-          location.pathname !== "/" &&
-          location.pathname !== "/register" &&
-          location.pathname !== "/passwordrecovery"
-        ) {
-          navigate("/");
-        } else if (
-          session &&
-          location.pathname !== "/init" &&
-          location.pathname !== "/passwordupdate"
-        ) {
-          navigate("/init");
-        }
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (
+        !session &&
+        location.pathname !== "/" &&
+        location.pathname !== "/register" &&
+        location.pathname !== "/passwordrecovery"
+      ) {
+        navigate("/");
+      } else if (
+        session &&
+        location.pathname !== "/init" &&
+        location.pathname !== "/passwordupdate"
+      ) {
+        navigate("/init");
       }
-    );
-    
-    return () => {
-      authListener?.unsubscribe();
-    };
+    });
   }, [navigate, location]);
 
   return null;
 }
 
 export default App;
-
