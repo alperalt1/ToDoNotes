@@ -3,6 +3,7 @@ import { supabase } from "./lib/helper/supabaseclient";
 import Loginpage from "./pages/loginpage";
 import Registerpage from "./pages/registerpage";
 import {
+  HashRouter,
   BrowserRouter,
   Route,
   Routes,
@@ -17,19 +18,16 @@ import { TaskContextProvider } from "./context/TaskContext";
 function App() {
   return (
     <TaskContextProvider>
-      <BrowserRouter basename="/ToDoNotes">
+      <HashRouter basename="/ToDoNotes">
         <AuthListener />
-        <Routes >
+        <Routes>
           <Route path="/" element={<Loginpage />} />
-          <Route path="/ToDoNotes/register" element={<Registerpage />} />
-          <Route path="/ToDoNotes/passwordrecovery" element={<Passwordrecovery />} />
+          <Route path="/register" element={<Registerpage />} />
+          <Route path="/passwordrecovery" element={<Passwordrecovery />} />
           <Route path="/init" element={<InitPage />} />
-          <Route
-            path="/passwordupdate"
-            element={<Passwordupdate></Passwordupdate>}
-          />
+          <Route path="/passwordupdate" element={<Passwordupdate />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TaskContextProvider>
   );
 }
