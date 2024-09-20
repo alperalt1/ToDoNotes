@@ -4,7 +4,6 @@ import Loginpage from "./pages/loginpage";
 import Registerpage from "./pages/registerpage";
 import {
   HashRouter,
-  BrowserRouter,
   Route,
   Routes,
   useNavigate,
@@ -35,26 +34,34 @@ function App() {
 function AuthListener() {
   const navigate = useNavigate();
   const location = useLocation();
+
   useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
-      if (
-        !session &&
-        location.pathname !== "/" &&
-        location.pathname !== "/register" &&
-        location.pathname !== "/passwordrecovery"
-      ) {
-        navigate("/");
-      } else if (
-        session &&
-        location.pathname !== "/init" &&
-        location.pathname !== "/passwordupdate"
-      ) {
-        navigate("/init");
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (
+          !session &&
+          location.pathname !== "/" &&
+          location.pathname !== "/register" &&
+          location.pathname !== "/passwordrecovery"
+        ) {
+          navigate("/");
+        } else if (
+          session &&
+          location.pathname !== "/init" &&
+          location.pathname !== "/passwordupdate"
+        ) {
+          navigate("/init");
+        }
       }
-    });
+    );
+    
+    return () => {
+      authListener?.unsubscribe();
+    };
   }, [navigate, location]);
 
   return null;
 }
 
 export default App;
+
