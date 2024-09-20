@@ -19,10 +19,10 @@ function App() {
     <TaskContextProvider>
       <BrowserRouter basename="/ToDoNotes">
         <AuthListener />
-        <Routes>
+        <Routes >
           <Route path="/" element={<Loginpage />} />
-          <Route path="/register" element={<Registerpage />} />
-          <Route path="/passwordrecovery" element={<Passwordrecovery />} />
+          <Route path="/ToDoNotes/register" element={<Registerpage />} />
+          <Route path="/ToDoNotes/passwordrecovery" element={<Passwordrecovery />} />
           <Route path="/init" element={<InitPage />} />
           <Route
             path="/passwordupdate"
