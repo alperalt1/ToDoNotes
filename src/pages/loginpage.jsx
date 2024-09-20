@@ -122,13 +122,13 @@ const Loginpage = () => {
           </form>
           <hr className={`mx-8`}></hr>
           <div className={`my-4 flex justify-center items-center`}>
-            <a href="/register" className={`text-sm mt-1 font-semibold`}>
+            <a href="/#/register" className={`text-sm mt-1 font-semibold`}>
               Registrarse
             </a>
           </div>
           <div className={`my-6 flex justify-center items-center`}>
             <a
-              href="/passwordrecovery"
+              href="/#/passwordrecovery"
               className={`text-sm mt-1 font-semibold`}
             >
               ¿Olvidaste tu Contraseña?

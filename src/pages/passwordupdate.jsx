@@ -59,7 +59,7 @@ const Passwordupdate = () => {
             </form>
             <hr className={`mx-8`}></hr>
             <div className={`my-4 flex justify-center items-center`}>
-              <a href="/" className={`text-sm mt-1 font-medium`}>
+              <a href="/#/" className={`text-sm mt-1 font-medium`}>
                 ¿Tienes una cuenta? Iniciar Sesión
               </a>
             </div>

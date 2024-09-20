@@ -120,7 +120,7 @@ const Registerpage = () => {
           </form>
           <hr className={`mx-8`}></hr>
           <div className={`my-4 flex justify-center items-center`}>
-            <a href="/" className={`text-sm mt-1 font-semibold`}>
+            <a href="/#/" className={`text-sm mt-1 font-semibold`}>
               ¿Tienes una cuenta? Iniciar Sesión
             </a>
           </div>
