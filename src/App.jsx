@@ -17,7 +17,7 @@ import { TaskContextProvider } from "./context/TaskContext";
 function App() {
   return (
     <TaskContextProvider>
-      <HashRouter basename="/ToDoNotes"> {/* Cambiado a HashRouter */}
+      <HashRouter> {/* Cambiado a HashRouter */}
         <AuthListener />
         <Routes>
           <Route path="/" element={<Loginpage />} />
