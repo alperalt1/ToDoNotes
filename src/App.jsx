@@ -3,7 +3,7 @@ import { supabase } from "./lib/helper/supabaseclient";
 import Loginpage from "./pages/loginpage";
 import Registerpage from "./pages/registerpage";
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Routes,
   useNavigate,
@@ -17,19 +17,16 @@ import { TaskContextProvider } from "./context/TaskContext";
 function App() {
   return (
     <TaskContextProvider>
-      <BrowserRouter basename="/ToDoNotes">
+      <HashRouter basename="/ToDoNotes"> {/* Cambiado a HashRouter */}
         <AuthListener />
         <Routes>
           <Route path="/" element={<Loginpage />} />
           <Route path="/register" element={<Registerpage />} />
           <Route path="/passwordrecovery" element={<Passwordrecovery />} />
           <Route path="/init" element={<InitPage />} />
-          <Route
-            path="/passwordupdate"
-            element={<Passwordupdate></Passwordupdate>}
-          />
+          <Route path="/passwordupdate" element={<Passwordupdate />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TaskContextProvider>
   );
 }
@@ -37,6 +34,7 @@ function App() {
 function AuthListener() {
   const navigate = useNavigate();
   const location = useLocation();
+  
   useEffect(() => {
     supabase.auth.onAuthStateChange((event, session) => {
       if (
