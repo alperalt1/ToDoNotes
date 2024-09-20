@@ -1,7 +1,7 @@
 {
   "name": "notes-app",
   "private": true,
-  // "homepage": "https://alperalt1.github.io/ToDoNotes",
+  "homepage": "https://alperalt1.github.io/ToDoNotes",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
