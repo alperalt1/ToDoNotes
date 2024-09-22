@@ -24,7 +24,7 @@ const Passwordrecovery = () => {
     <div className={`h-screen w-screen flex justify-center items-center`}>
       <div className={`h-1/2 w-80 bg-fith rounded-md`}>
         <div>
-          <div className={`mx-8 my-8 flex flex-col text-xl font-bold`}>
+          <div className={`mx-8 small-mobile:my-4 my-8 flex flex-col text-xl font-bold`}>
             Recuperar Contraseña
             <span className={`text-sm mt-1 font-medium`}>Ingrese su correo para enviar el enlace y restablecer su contraseña.</span>
           </div>

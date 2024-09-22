@@ -45,9 +45,9 @@ const Loginpage = () => {
 
   return (
     <div className={`h-screen w-screen flex justify-center items-center`}>
-      <div className={`h-2/3 w-80 bg-fith rounded-md`}>
+      <div className={`h-2/3 w-80 bg-fith rounded-md `}>
         <div>
-          <div className={`mx-8 my-8 flex flex-col text-xl font-bold`}>
+          <div className={`mx-8 my-8 small-mobile:my-2 flex flex-col text-xl font-bold`}>
             Iniciar Sesión
             <span className={`text-sm mt-1 font-medium`}>
               Ingrese a su cuenta.
@@ -56,13 +56,13 @@ const Loginpage = () => {
           <div className={`my-6`}>
             <a
               onClick={login}
-              className={`h-8 bg-fourth text-sm mx-8 cursor-pointer flex justify-center items-center rounded border border-gray-300 focus:border-blue-500 focus:outline-none`}
+              className={`h-8 small-mobile:h-6 bg-fourth text-sm mx-8 cursor-pointer flex justify-center items-center rounded border border-gray-300 focus:border-blue-500 focus:outline-none`}
             >
               <FaGithub />
               <span className={`mx-2 font-medium`}>Continuar con Github</span>
             </a>
           </div>
-          <div className={`w-full px-8 flex justify-center items-center`}>
+          <div className={`w-full small-mobile:h-4 px-8 flex justify-center items-center`}>
             <hr className={`w-1/2`}></hr>
             <span className={`mx-1 mb-1 font-medium`}>o</span>
             <hr className={`w-1/2`}></hr>
@@ -112,7 +112,7 @@ const Loginpage = () => {
               </span>
             )}
 
-            <div className={`w-full mb-6 flex justify-center items-center`}>
+            <div className={`w-full mb-6 small-mobile:mb-4 flex justify-center items-center`}>
               <button
                 type="submit"
                 className={`h-10 w-20 bg-fourth rounded border border-gray-300 hover:border-blue-500 font-medium`}
@@ -122,12 +122,12 @@ const Loginpage = () => {
             </div>
           </form>
           <hr className={`mx-8`}></hr>
-          <div className={`my-4 flex justify-center items-center`}>
+          <div className={`my-4 small-mobile:my-1 flex justify-center items-center`}>
             <Link to="/register" className={`text-sm mt-1 font-semibold`}>
               Registrarse
             </Link>
           </div>
-          <div className={`my-6 flex justify-center items-center`}>
+          <div className={`my-6 small-mobile:my-1 flex justify-center items-center`}>
             <Link
               to="/passwordrecovery"
               className={`text-sm mt-1 font-semibold`}

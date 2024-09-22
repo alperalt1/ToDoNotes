@@ -33,14 +33,14 @@ const Registerpage = () => {
   });
 
   return (
-    <div className={`h-screen w-screen flex justify-center items-center`}>
+    <div className={`h-screen w-screen flex justify-center items-center small-mobile:items-center`}>
       <div className={`h-3/4 w-80 bg-fith rounded-md`}>
         <div>
-          <div className={`mx-8 my-8 flex flex-col text-xl font-bold`}>
+          <div className={`mx-8 small-mobile:my-1 my-8 flex flex-col text-xl font-bold`}>
             Registrarse
             <span className={`text-sm mt-1 font-medium`}>Ingresar los datos.</span>
           </div>
-          <div className={`my-6`}>
+          <div className={`my-6 small-mobile:my-4`}>
             <a
               onClick={login}
               className={`h-8 bg-fourth text-sm mx-8 cursor-pointer flex justify-center items-center rounded border border-gray-300 focus:border-blue-500 focus:outline-none`}
@@ -55,7 +55,7 @@ const Registerpage = () => {
             <hr className={`w-1/2`}></hr>
           </div>
           <form onSubmit={onSubmit}>
-            <div className={`h-24 mx-8 flex flex-col font-medium`}>
+            <div className={`h-24 small-mobile:h-20 mx-8 flex flex-col font-medium`}>
               <label htmlFor="mail">Correo</label>
               <input
                 type="email"
@@ -75,7 +75,7 @@ const Registerpage = () => {
                 errors.email && <span className={`text-xs`}>{errors.email.message}</span>
               }
             </div>
-            <div className={`h-24 mx-8 flex flex-col font-medium`}>
+            <div className={`h-24 small-mobile:h-20 mx-8 flex flex-col font-medium`}>
               <label htmlFor="password">Contraseña</label>
               <input
                 type="password"
@@ -95,7 +95,7 @@ const Registerpage = () => {
                 errors.password && <span className={`text-xs`}>{errors.password.message}</span>
               }
             </div>
-            <div className={`h-24 mx-8 flex flex-col font-medium`}>
+            <div className={`h-24 small-mobile:h-20 mx-8 flex flex-col font-medium`}>
               <label htmlFor="repeteadpassword">Repetir Contraseña</label>
               <input
                 type="password"
@@ -113,7 +113,7 @@ const Registerpage = () => {
                 errors.repeteadpassword && <span className={`text-xs`}>{errors.repeteadpassword.message}</span>
               }
             </div>
-            <div className={`w-full mb-6 flex justify-center items-center`}>
+            <div className={`w-full mb-6 small-mobile:mb-3 flex justify-center items-center`}>
               <button
                 type="submit"
                 className={`h-10 w-20 bg-fourth rounded border border-gray-300 hover:border-blue-500 font-medium`}
