@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/helper/supabaseclient";
 import { Appbar } from "../components/appbar";
 import { IoAdd } from "react-icons/io5";
-import { AiOutlineDelete } from "react-icons/ai";
-import { FiEdit3 } from "react-icons/fi";
 import { TaskList } from "../components/TaskList";
 import { useNavigate } from "react-router-dom";
 import { ModalCreateTask } from "../components/ModalCreateTask";
