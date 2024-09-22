@@ -34,7 +34,7 @@ export const TaskList = () => {
     );
     } else {
       return (
-        <div className={`h-full w-full px-3 grid grid-cols-4 gap-3`}>
+        <div className={`h-full w-full px-3 grid grid-cols-4 gap-3 small-mobile:grid-cols-1`}>
           {
             tasks.map((task) => (
               <TaskCard key={task.id} task={task} />

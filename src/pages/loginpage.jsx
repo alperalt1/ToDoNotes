@@ -106,7 +106,7 @@ const Loginpage = () => {
             </div>
             {errorDiv && (
               <span
-                className={`my-5 text-sm mt-1 font-medium flex justify-center items-center`}
+                className={`my-5 small-mobile:my-2 small-mobile:-mt-3 text-sm mt-1 font-medium flex justify-center items-center`}
               >
                 Credenciales Incorrectas
               </span>

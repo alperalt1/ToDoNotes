@@ -18,7 +18,11 @@ function TaskCard({ task }) {
           </button>
         </div>
       </div>
-      <h1>{task.description}</h1>
+      <div className="h-full w-full flex items-center justify-center">
+        <span className="h-full w-full text-center overflow-hidden break-words text-justify">
+          {task.description}
+        </span>
+      </div>
       {/* <p>{JSON.stringify(task.done)}</p> */}
     </div>
   );

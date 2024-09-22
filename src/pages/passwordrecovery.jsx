@@ -11,7 +11,9 @@ const Passwordrecovery = () => {
   const onSubmit = handleSubmit(async (info)=>{
     try {
       const { data, error } = await supabase.auth
-      .resetPasswordForEmail(formData.email);
+      .resetPasswordForEmail(info.email,{
+        redirectTo: 'https://alperalt1.github.io/ToDoNotes/passwordupdate/',
+      });
       if (error) throw error;
       navigate("/");
     } catch (error) {

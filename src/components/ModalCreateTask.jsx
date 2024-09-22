@@ -25,7 +25,7 @@ export const ModalCreateTask = ({isVisible, onClose}) => {
     <div
       className={`fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center `}
     >
-      <div className={`bg-fith w-1/2 h-1/3 p-4 rounded-md`}>
+      <div className={`bg-fith w-1/2 small-mobile:w-full small-mobile:h-2/4 h-1/3 p-4 rounded-md`}>
         <button  onClick={()=>{onClose()}} className={`w-full flex justify-end `}><IoMdClose />
         </button>
         <form onSubmit={onSub}>
@@ -49,6 +49,7 @@ export const ModalCreateTask = ({isVisible, onClose}) => {
           <div className={`flex flex-col font-medium mb-4`}>
             <label htmlFor="descriptiontask">Tarea</label>
             <textarea
+              maxLength={120}
               type="text"
               {...register("descriptiontask", {
                 required: {
@@ -56,7 +57,7 @@ export const ModalCreateTask = ({isVisible, onClose}) => {
                   message: "Este campo es obligatorio",
                 },
               })}
-              className={`h-1/2 mt-2 bg-fith font-normal p-2 rounded border border-gray-300 focus:border-blue-500 focus:outline-none`}
+              className={`h-1/2 small-mobile:h-28 mt-2 bg-fith font-normal p-2 rounded border border-gray-300 focus:border-blue-500 focus:outline-none`}
             />
             {errors.descriptiontask && (
               <span className={`text-xs`}>
