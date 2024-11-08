@@ -47,7 +47,7 @@ function AuthListener() {
         navigate("/");
       } else if (
         session &&
-        location.pathname !== "/init" &&
+        location.pathname !== "/init"
       ) {
         navigate("/init");
       }
