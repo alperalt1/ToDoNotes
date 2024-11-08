@@ -17,6 +17,9 @@ const Loginpage = () => {
   const login = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "github",
+      options: {
+        redirectTo: "https://alperalt1.github.io/ToDoNotes/"
+      }
     });
   };
 
