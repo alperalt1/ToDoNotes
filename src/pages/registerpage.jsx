@@ -4,6 +4,7 @@ import { supabase } from "../lib/helper/supabaseclient";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const Registerpage = () => {
   let navigate = useNavigate()
@@ -24,8 +25,14 @@ const Registerpage = () => {
           emailRedirectTo: "https://alperalt1.github.io/ToDoNotes/"
         }
       });
-      if (error) throw error;
-      navigate("/");
+
+      if ( data.user.identities?.length === 0 ){
+        Swal.fire("Usuario Existente");
+        console.log("hola");
+      } else if( error==null ){
+        Swal.fire("Registro Exitoso");
+        navigate("/");
+      }
     } catch (error) {
       alert(error.message);
     }
@@ -116,6 +123,7 @@ const Registerpage = () => {
             <div className={`w-full mb-6 small-mobile:mb-3 flex justify-center items-center`}>
               <button
                 type="submit"
+                
                 className={`h-10 w-20 bg-fourth rounded border border-gray-300 hover:border-blue-500 font-medium`}
               >
                 Registrar

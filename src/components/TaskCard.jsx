@@ -19,7 +19,7 @@ function TaskCard({ task }) {
         </div>
       </div>
       <div className="h-full w-full flex items-center justify-center">
-        <span className="h-full w-full text-center overflow-hidden break-words text-justify">
+        <span className="h-full w-full overflow-hidden break-words text-justify">
           {task.description}
         </span>
       </div>
