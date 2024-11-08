@@ -31,7 +31,6 @@ const Registerpage = () => {
 
       if ( data.user.identities?.length === 0 ){
         Swal.fire("Usuario Existente");
-        console.log("hola");
       } else if( error==null ){
         Swal.fire("Registro Exitoso");
         navigate("/");

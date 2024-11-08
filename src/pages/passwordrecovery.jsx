@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/helper/supabaseclient";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const Passwordrecovery = () => {
   const navigate = useNavigate();
@@ -14,8 +15,12 @@ const Passwordrecovery = () => {
       .resetPasswordForEmail(info.email,{
         redirectTo: 'https://alperalt1.github.io/ToDoNotes/passwordupdate/',
       });
-      if (error) throw error;
-      navigate("/");
+      if (error==null) {
+        Swal.fire("Se enviara un enlace de restablecimiento de contraseña al correo electrónico del usuario");
+        navigate("/");
+      } else {
+        throw error
+      } 
     } catch (error) {
       alert(error.message);
     }

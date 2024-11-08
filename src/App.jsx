@@ -41,13 +41,13 @@ function AuthListener() {
         !session &&
         location.pathname !== "/" &&
         location.pathname !== "/register" &&
-        location.pathname !== "/passwordrecovery"
+        location.pathname !== "/passwordrecovery" &&
+        location.pathname !== "/passwordupdate"
       ) {
         navigate("/");
       } else if (
         session &&
         location.pathname !== "/init" &&
-        location.pathname !== "/passwordupdate"
       ) {
         navigate("/init");
       }
