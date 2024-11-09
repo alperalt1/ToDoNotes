@@ -13,7 +13,9 @@ const Passwordupdate = () => {
         const { data, error } = await supabase.auth.updateUser({ 
           password: info.password,
         });
+        console.log(data);
         if (error) throw error;
+
         navigate("/");
       } catch (error) {
         alert(error.message);
