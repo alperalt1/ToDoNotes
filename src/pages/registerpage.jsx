@@ -13,7 +13,9 @@ const Registerpage = () => {
   const login = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "github",
-      
+      options: {
+        redirectTo: "https://alperalt1.github.io/ToDoNotes/"
+      }
     });
   };
 
@@ -22,7 +24,9 @@ const Registerpage = () => {
       const { data, error } = await supabase.auth.signUp({ 
         email: info.email,
         password: info.password,
-        
+        options: {
+          emailRedirectTo: "https://alperalt1.github.io/ToDoNotes/"
+        }
       });
 
       if ( data.user.identities?.length === 0 ){

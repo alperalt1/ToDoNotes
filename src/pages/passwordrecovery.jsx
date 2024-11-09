@@ -13,7 +13,7 @@ const Passwordrecovery = () => {
     try {
       const { data, error } = await supabase.auth
       .resetPasswordForEmail(info.email,{
-        redirectTo: 'https://www.google.com/?hl=es',
+        redirectTo: '/passwordupdate',
       });
       if (error==null) {
         Swal.fire("Se enviara un enlace de restablecimiento de contraseña al correo electrónico del usuario");
